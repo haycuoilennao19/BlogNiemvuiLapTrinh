@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' href='/stylesheets/normalizes.css' />
+  <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+  <link rel='stylesheet' href='/stylesheets/darcula.css' />
+  <link rel='stylesheet' href='/stylesheets/hover-min.css' />
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <!-- <meta property="og:image" content="https://res.cloudinary.com/dn4nxz7f0/image/upload/v1576511394/Niemvuilaptrinh_jgc0rn.png"> -->
+  <meta property="og:url"                content="http://www.niemvuilaptrinh.com/article/<%-article.id%>" />
+  <meta property="og:type"               content="article" />
+  <meta property="og:title"              content="<%-article.title%>" />
+  <meta property="og:description"        content="<%-article.subtitle%>" />
+  <meta property="og:image"              content="<%-article.file%>" />
+  <meta property="fb:app_id" content="2121975281235443" />
+  <!--Font Logo-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Crimson+Text&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:400,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans:400,700,800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/stylesheets/font-awesome/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <meta name="google-site-verification" content="SXEFa5YhgCrmAOJhBwsuDms_fUALYxrM8ZUql8KHgNM" />
+</head>
+
+<body>
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '2121975281235443',
+        xfbml      : true,
+        version    : 'v5.0'
+      });
+      FB.AppEvents.logPageView();
+    };
+  
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "https://connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+  </script>
+  <!--Navbar-->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top p-2">
+    <a class="navbar-brand" href="/">Niềm Vui Lập Trình</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+       <span><i class="fa fa-navicon"></i></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link mr-5 hvr-underline-from-left" href="/">Trang Chủ <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item dropdown ">
+          <a class="nav-link dropdown-toggle  mr-5 hvr-underline-from-left" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Khóa Học</a>
+          <div class="dropdown-menu mt-2">
+            <a class="dropdown-item" href="/article/html">HTML</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link hvr-underline-from-left mr-5" href="/about">Giới Thiệu</a>
+        </li>
+   
+
+    </div>
+  </nav>
+<!--Content-->
+<div class="jumbotron jumbotron-fluid image-slider">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-xs-12">
+    <div class="content-image">
+      <div class="content">
+        <blockquote class="blockquote">
+          <h1 class="mb-2 content-header">Tôi không có tài năng gì cả. Tôi chỉ đam mê hiểu biết</h1>
+          <footer class="blockquote-footer text-right text-white">Albert Einstein</footer>
+        </blockquote>
+      </div>
+    </div>
+    </div>
+  </div>
+  </div>
+<div class="header-text text-center mt-5 ">
+  <span class="header-content"><%=article.title%></span>
+</div>
+<div class="container mt-5" id="content-box">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-xs-12">
+     
+ 
+        <h5 class="card-header"> <img src="<%-article.file%>" class="card-img-top" alt="..."></h5>
+        <h3 class="button-article"><button type="button"
+            class="<%-article.category%> btn shadow-sm rounded btn-success mt-3 pl-5 pr-5"><%=article.category%></button></h3>
+            <h6 class="text-muted text-right"><i class="fa fa-clock-o" aria-hidden="true"></i> <%=article.date%></h6>
+          <hr />
+          <div class="card-text text-justify"><%-article.content%></div>
+         
+        
+        
+    
+      <div class="mb-5"></div>
+      <div class="fb-comments" data-href="http://www.niemvuilaptrinh.com/article/<%-article.id%>" data-width="" data-numposts="5"></div>
+    </div>
+    <div class="mb-5"></div>
+    <div class="col-lg-12 col-md-12 col-xs-12">
+        <div class="mt-5"></div>
+        <div class="card card-search">
+          <div class="card-header card-header-category">
+            Từ Khóa
+          </div>
+          <div class="card-body card-body-search mt-4">
+              <h3 class="button-article"><a href="/article/css"><button type="button"
+                class="CSS btn shadow-sm rounded btn-success m-2 pl-3 pr-3">CSS</button></a>
+                <a href="/article/html"><button type="button"
+                class="HTML btn shadow-sm rounded btn-success m-2 pl-3 pr-3">HTML</button></a>
+                <a href="/article/Javscript">
+                <button type="button"
+                class="btn shadow-sm rounded btn-success m-2 pl-3 pr-3">Javscript</button></a>
+              </h3>
+                </div>
+          </div>
+
+            <div class="card card-search">
+                <div class="card-header card-header-search">
+                  Đăng kí Email
+                 
+                </div>
+                <div class="card-body card-body-search">
+                  <div class="text-email-subscribe">
+                    <p class="text-justify mt-4">Các bạn nhấp subscribe để nhận bài viết mới nhất từ mình nhé!</p>
+                    </div>
+                    <!-- Begin Mailchimp Signup Form -->
+                    <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
+                    <style type="text/css">
+                      #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+                      /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+                         We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+                    </style>
+                    <div id="mc_embed_signup">
+                    <form action="https://gmail.us20.list-manage.com/subscribe/post?u=02f033de83f488a359d24bc9f&amp;id=85d0d8697c" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                        <div id="mc_embed_signup_scroll">
+                  
+                    <div class="mc-field-group">                
+                      <label for="mce-EMAIL" class="label-email mb-2">Email:
+                    </label>
+                      <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Hãy nhập địa chỉ email của bạn">
+
+                    </div>
+                      <div id="mce-responses" class="clear">
+                        <div class="response text-justify" id="mce-error-response" style="display:none"></div>
+                        <div class="response text-justify" id="mce-success-response" style="display:none"></div>
+                      </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                        <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_02f033de83f488a359d24bc9f_85d0d8697c" tabindex="-1" value=""></div>
+                        <div class="clear"><input type="submit" value="Đăng Kí Email" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+                        </div>
+                    </form>
+                    </div>
+                    <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+                    <!--End mc_embed_signup-->
+                                                         
+                      </div>
+                </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var container = document.getElementById('content-box');
+    
+    $(window).on('load resize', (function() {
+      windowsize = $(window).width();
+      
+      if((windowsize <= 992)  && (screen.height>=768)) {
+        container.classList.remove('container');
+        container.classList.add('container-fluid')
+  
+        //navbar
+        $('.nav-item').addClass('hvr-underline-from-left')
+      } else{
+        container.classList.add('container');
+        container.classList.remove('container-fluid')
+  
+        //navbar
+        $('.nav-item').removeClass('hvr-underline-from-left')
+      }
+    }));
+    
+  </script>
+  <script src='/javascripts/highlight.pack.js'></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <script>
+    $(document).ready(function() {
+      const win = $(window);
+      const doc = $(document);
+      const progressBar = $('progress');
+      const progressLabel = $('.progress-label');
+      const setValue = () => win.scrollTop();
+      const setMax = () => doc.height() - win.height();
+      const setPercent = () => Math.round(win.scrollTop() / (doc.height() - win.height()) * 100);
+      
+      progressLabel.text(setPercent() + '%');
+      progressBar.attr({ value: setValue(), max: setMax() });
+    
+      doc.on('scroll', () => {
+        progressLabel.text(setPercent() + '%');
+        progressBar.attr({ value: setValue() });
+      });
+      
+      win.on('resize', () => {
+        progressLabel.text(setPercent() + '%');
+        progressBar.attr({ value: setValue(), max: setMax() });
+      })
+    });
+    
+  
+  </script>
+  <%- include('footer') -%>
